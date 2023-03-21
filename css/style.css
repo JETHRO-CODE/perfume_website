@@ -555,7 +555,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #e83e8c;
+  color: goldenrod;
   word-wrap: break-word;
 }
 
@@ -2371,27 +2371,27 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #212529;
-  background-color: #F195B2;
-  border-color: #F195B2;
+  background-color: goldenrod;
+  border-color: goldenrod;
 }
 
 .btn-primary:hover {
   color: #212529;
-  background-color: #ed7399;
-  border-color: #eb6891;
+  background-color: goldenrod;
+  border-color: goldenrod;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #212529;
-  background-color: #ed7399;
-  border-color: #eb6891;
+  background-color: goldenrod;
+  border-color: goldenrod;
   box-shadow: 0 0 0 0.2rem rgba(210, 132, 157, 0.5);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #212529;
-  background-color: #F195B2;
-  border-color: #F195B2;
+  background-color: goldenrod;
+  border-color: goldenrod;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
@@ -2408,14 +2408,14 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #212529;
-  background-color: #62C3E7;
-  border-color: #62C3E7;
+  background-color: black;
+  border-color: black;
 }
 
 .btn-secondary:hover {
   color: #212529;
-  background-color: #41b6e2;
-  border-color: #36b2e0;
+  background-color: black;
+  border-color: black;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
@@ -2698,14 +2698,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-  color: #62C3E7;
-  border-color: #62C3E7;
+  color: black;
+  border-color: black;
 }
 
 .btn-outline-secondary:hover {
   color: #212529;
-  background-color: #62C3E7;
-  border-color: #62C3E7;
+  background-color: black;
+  border-color: black;
 }
 
 .btn-outline-secondary:focus, .btn-outline-secondary.focus {
@@ -2791,6 +2791,11 @@ fieldset:disabled a.btn {
 .btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-info.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+}
+
+.btn-outline-secondary:hover
+{
+  color: white;
 }
 
 .btn-outline-warning {
@@ -6355,7 +6360,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #F195B2 !important;
+  background-color: goldenrod !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -9525,15 +9530,15 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #F195B2 !important;
+  color: goldenrod !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #e85181 !important;
+  color: goldenrod !important;
 }
 
 .text-secondary {
-  color: #62C3E7 !important;
+  color: black !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
@@ -9770,7 +9775,7 @@ h6,
   height: 50%;
   top: 0;
   left: 0;
-  background: #F195B2;
+  background: goldenrod;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -9783,7 +9788,7 @@ h6,
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-  color: #F195B2;
+  color: goldenrod;
 }
 
 @media (max-width: 991.98px) {
@@ -9953,7 +9958,7 @@ h6,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #F195B2;
+  color: goldenrod;
   background: #FFFFFF;
   border-radius: 60px;
   font-size: 30px;
@@ -9977,7 +9982,7 @@ h6,
   right: 0;
   bottom: -15px;
   left: 0;
-  background: #F195B2;
+  background: goldenrod;
   border-radius: 150px;
   z-index: -1;
 }
@@ -10049,7 +10054,7 @@ h6,
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 15px solid #F195B2;
+  border: 15px solid goldenrod;
   border-radius: 200px;
   overflow: hidden;
   z-index: 1;
@@ -10062,7 +10067,7 @@ h6,
   right: 15px;
   bottom: 15px;
   left: 15px;
-  border: 2px solid #F195B2;
+  border: 2px solid goldenrod;
   border-radius: 200px;
   transition: .5s;
   z-index: 2;
@@ -10115,7 +10120,7 @@ h6,
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  background: #F195B2;
+  background: black;
 }
 
 .testimonial-carousel .owl-dot::after {
@@ -10125,12 +10130,13 @@ h6,
   right: -5px;
   bottom: -5px;
   left: -5px;
-  border: 2px solid #F195B2;
+  border: 2px solid black;
   border-radius: 20px;
 }
 
 .testimonial-carousel .owl-dot.active {
-  background: #62C3E7;
+  background: goldenrod;
+  border: goldenrod;
 }
 
 .contact-form .help-block ul {
@@ -10143,4 +10149,61 @@ h6,
   .footer .border-right {
     border-right: none !important;
   }
+}
+
+.form_text
+{
+  color: green;
+  font-weight: bold;
+}
+
+.form_input
+{
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.form_input1
+{
+  display: flex;
+}
+
+input
+{
+  border-radius: 15px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid grey;
+  padding-left: 10px;
+}
+
+#form_button
+{
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  color: white;
+  background: goldenrod;
+  border: goldenrod;
+}
+
+#message
+{
+  border-radius: 15px;
+  border: 1px solid grey;
+  padding-left: 12px;
+  padding-top: 12px;
+  margin-left: 5px;
+}
+
+#subject
+{
+  border-radius: 15px;
+  border: 1px solid grey;
+  padding-left: 10px;
+  width: 97%;
+  margin-left: 10px;
+  
 }

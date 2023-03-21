@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>iCREAM - Ice Cream Shop Website Template</title>
+    <title>Kemzscentz Plus website</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -70,7 +70,7 @@
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
                 <a href="index.php" class="navbar-brand d-block d-lg-none">
-                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary"></span>Kemzscentz Plus</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -82,7 +82,7 @@
                         <a href="product.php" class="nav-item nav-link">Product</a>
                     </div>
                     <a href="index.php" class="navbar-brand mx-5 d-none d-lg-block">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary"></span>Kemzscentz Plus</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
                         <a href="service.php" class="nav-item nav-link">Service</a>
@@ -101,7 +101,7 @@
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                    <img class="w-100" src="img/slider 1.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Traditional & Delicious</h4>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="img/slider 2.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Traditional & Delicious</h4>
@@ -531,7 +531,7 @@
             <div class="row">
                 <div class="col-12 mb-4">
                     <a href="index.html" class="navbar-brand m-0">
-                        <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                        <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary"></span>Kemzscentz Plus</h1>
                     </a>
                 </div>
                 <div class="col-12 mb-4">

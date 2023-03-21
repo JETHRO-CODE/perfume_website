@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +71,7 @@
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
                 <a href="index.php" class="navbar-brand d-block d-lg-none">
-                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary"></span>Kemzscentz Plus</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -82,7 +83,7 @@
                         <a href="product.php" class="nav-item nav-link">Product</a>
                     </div>
                     <a href="index.php" class="navbar-brand mx-5 d-none d-lg-block">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
+                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary"></span>Kemzscentz Plus</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
                         <a href="service.php" class="nav-item nav-link">Service</a>
@@ -122,43 +123,80 @@
                 <div class="col-lg-9">
                     <div class="contact-form bg-light rounded p-5">
                         <div id="success"> 
-                            <?php
+                        <?php
+                         $name_error = $email_error = $gender_error = $message_error =$subject_error="";
+                         if(isset($_POST['submit'])){
+                         $name = htmlspecialchars(trim($_POST['name']));
+                         $email = htmlspecialchars(trim($_POST['email']));
+                         $subject = htmlspecialchars(trim($_POST['subject']));
+                         $message = htmlspecialchars(trim($_POST['message']));
+                         
+                        if(empty($name)){
+                             $name_error = "Enter your name";
+                         }
+                 
+                         if(empty($email)){
+                             $email_error = "Enter your email";
+                         }
+                 
+                         if(empty($gender)){
+                             $gender_error = "Enter your name";
+                         }
 
-                        if(isset($_POST['submit']))
+                         if($name_error == "" && $email_error == "" && $message_error == "" && $subject_error == "")
+                         {
+                            echo "<span style='color:green'; font-weight:bold;>Successfully Registered </span>";
+                         }
+                          }         
+                                      
+                        ?>
+               
+               
+              
+                        </div>
 
-                        {
-                            $your_name = $_POST['your_name'];
-                            $email = $_POST['your_email'];
 
-                            echo $your_name."   Thank you for contacting us   ";
+     <form  method="POST">
 
-                        }
-                       
+     <div>
 
-                        ?></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate" method="POST">
-                            <div class="form-row">
-                                <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control p-4" id="name" name="your_name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control p-4" name="your_email" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton" name="submit">Send Message</button>
-                            </div>
-                        </form>
+        <div class="form_input1">
+            <div class="form_input">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder=" Your Name" 
+            value="<?php if(isset($_POST['email'])) {echo $email;} ?>">
+            <?php echo  "<span style='color:red; font-weight:bold;'>$name_error</span>"  ;?>
+            </div>
+            
+            <div class="form_input">
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder=" Your email"
+            value="<?php if(isset($_POST['name'])) {echo $name;} ?>">
+            <?php echo  "<span style='color:red; font-weight:bold;'>$email_error</span>"  ;?>
+            </div>
+        </div>
+                
+     </div>
+     <div>
+     <br>
+
+    <label for="subject"></label><br>
+    <input type="text" id="subject" name="subject" placeholder="Subject"
+    value="<?php if(isset($_POST['subject'])) {echo $subject;} ?>">>
+     </div>
+    
+    <div>
+    <br>
+
+    <label for="message"></label><br>
+    <textarea name="message" id="message" cols="85" rows="5" placeholder="Message"></textarea>
+    <br><br>
+
+    <button type="submit" name="submit"id="form_button" >Send Message</button>
+    </div>
+
+  </form>
+                    
                     </div>
                 </div>
             </div>
