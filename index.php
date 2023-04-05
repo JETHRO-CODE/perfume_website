@@ -24,6 +24,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/8db71d15fc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

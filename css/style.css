@@ -10222,3 +10222,34 @@ input
   padding-left: 10px;
 
 }
+
+.registration
+{
+  width: 350px;
+  height: 500px;
+  background: white;
+  margin-left: 500px;
+  margin-bottom: 200px;
+}
+
+/*Account on click styling*/
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  color: goldenrod;
+}

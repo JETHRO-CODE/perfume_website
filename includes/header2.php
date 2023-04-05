@@ -19,7 +19,15 @@
                     </a>
                     <div class="navbar-nav mr-auto py-0">
                         <a href="service.php" class="nav-item nav-link">Service</a>
-                        <a href="gallery.php" class="nav-item nav-link">Gallery</a>
+                        <span class="dropdown">
+                        <span><li><a href="account.php" class="nav-item nav-link">Account<i class="fa fa-caret-down"></i></a></li></span>
+                        <span class="dropdown-content">
+                        <p><a href="registration.php">Register</a></p>
+                        <p><a href="index.php">Login</a></p>
+                        </span>
+                        </span>
+                        
+                        
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
