@@ -53,6 +53,7 @@
                          if(isset($_POST['submit'])){
                          $name = htmlspecialchars(trim($_POST['name']));
                          $password = htmlspecialchars(trim($_POST['abcDeF1#']));
+                         $gender = htmlspecialchars(trim($_POST['gender']));
                          $re_enter_password = "";
                          
             
@@ -93,16 +94,20 @@
            
                         elseif ( $re_enter_password != $password)
                         {
-                           $only_re_enter = "password is not the the same ";
+                           $only_re_enter = "password is not the same ";
                         }
 
                         else
                         {
-                            $only_re_enter  = " password matched ";
+                           echo "password is the same ";
                         }
 
-                        }
+                        
 
+                       
+
+                        }
+                        
                                 
                          if(empty($gender)){
                              $gender_error = "Enter your gender";
@@ -194,7 +199,7 @@
             <?php echo  "<span style='color:red; font-weight:bold;'>$only_password</span>"  ;?>
 
             <label for="Re-enter"> Re-enter</label>
-            <input type="" id="Re-enter" name="abcDeF1#" placeholder="Re-enter your password"
+            <input type="" id="Re-enter" name="re_enter" placeholder="Re-enter your password"
             value="<?php if(isset($_POST['re_enter_password'])) {echo $re_enter_password;} ?>"><span style='color:red; font-weight: bold;'>*</span>
             <?php echo  "<span style='color:red; font-weight:bold;'>$re_enter_error</span>"  ;?>
             <?php echo  "<span style='color:red; font-weight:bold;'>$only_re_enter</span>"  ;?><br><br>

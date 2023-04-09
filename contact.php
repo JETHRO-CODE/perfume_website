@@ -1,4 +1,4 @@
-
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,6 +66,12 @@
                          $email = htmlspecialchars(trim($_POST['email']));
                          $website = htmlspecialchars(trim($_POST['subject']));
                          $message = htmlspecialchars(trim($_POST['message'])) ;  
+
+                         $_SESSION ['name'] = $name;
+                         $_SESSION ['email'] = $email;
+                         $_SESSION ['website'] = $website;
+
+                         
             
                          if(isset($_POST['gender'])){
                         $gender = htmlspecialchars(trim($_POST['gender']));
