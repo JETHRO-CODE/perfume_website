@@ -130,8 +130,15 @@
         loop: true,
         items: 1
     });
+
+    $('.account_menu_container').click(function(){
+        $(this).children('.account_list_container').slideToggle();
+      });
+      
     
 })(jQuery);
+
+
 
 
 

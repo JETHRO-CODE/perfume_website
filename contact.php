@@ -62,21 +62,23 @@
                          $name_error = $email_error = $gender_error = $message_error =$subject_error= 
                          $only_letters = $only_email= $invalid_website="";
                          if(isset($_POST['submit'])){
+
+                         require"includes/contact_db_conn.php";
                          $name = htmlspecialchars(trim($_POST['name']));
                          $email = htmlspecialchars(trim($_POST['email']));
+                         if(isset($_POST['gender'])){
+                            $gender = htmlspecialchars(trim($_POST['gender']));
+                            }
                          $website = htmlspecialchars(trim($_POST['subject']));
                          $message = htmlspecialchars(trim($_POST['message'])) ;  
 
-                         $_SESSION ['name'] = $name;
+                         /*$_SESSION ['name'] = $name;
                          $_SESSION ['email'] = $email;
-                         $_SESSION ['website'] = $website;
+                         $_SESSION ['website'] = $website;*/
 
                          
             
-                         if(isset($_POST['gender'])){
-                        $gender = htmlspecialchars(trim($_POST['gender']));
-
-                         }
+                        
                          
                         if(empty($name)){
                              $name_error = "Enter your name";
@@ -109,10 +111,22 @@
                              $gender_error = "Enter your gender";
                          }
 
-                         if($name_error == "" && $email_error == "" && $message_error == "" && $subject_error == "" && $gender_error == "")
+                         else
                          {
-                            echo "<span style='color:green'; font-weight:bold;>Successfully Registered </span>";
+                             $sql = "INSERT INTO contact_table(name, email, gender, subject, message) VALUES('$name', '$email', '$gender', '$website', '$message')";
+ 
+                             if(mysqli_query($conn, $sql))
+                             {
+                                 echo "<p style='color:green; font-weight:bold;' >Successfully Registered </p>";
+                             }
+                             else
+                             {
+                                 echo "<p style='color:red; font-weight:bold;' >Registration failed </p>";
+                             }
                          }
+
+                                                
+        
                           }         
                                       
                         ?>

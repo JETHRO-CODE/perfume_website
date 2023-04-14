@@ -34,4 +34,7 @@
             </div>
         </div>
     </div>
+    <script src="Javascript/jquery-3.6.3.min.js"></script>
+    <script src="Javascript/jquery-3.6.3.js"></script>
+    <script src="Javascript/script.js"></script>
     <!-- Footer End -->

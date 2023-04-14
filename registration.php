@@ -46,175 +46,38 @@
     </div>
     <!-- Header End -->
 
-    <div>
-    <?php
-                         $name_error = $password_error = $gender_error = $message_error =$subject_error= $re_enter_error = 
-                         $only_letters = $only_email= $invalid_website = $only_password= $only_re_enter="";
-                         if(isset($_POST['submit'])){
-                         $name = htmlspecialchars(trim($_POST['name']));
-                         $password = htmlspecialchars(trim($_POST['abcDeF1#']));
-                         $gender = htmlspecialchars(trim($_POST['gender']));
-                         $re_enter_password = "";
-                         
-            
-                         if(isset($_POST['gender'])){
-                        $gender = htmlspecialchars(trim($_POST['gender']));
-
-                         }
-                         
-                        if(empty($name)){
-                             $name_error = "Enter your name";
-                         }
-
-                         if(!preg_match("/^[a-zA-Z ]*$/", $name))
-                         {
-                            $only_letters = "You are required to enter only letters ";
-                         }
+    /*
+create a database for the contact form, anybody that fills their details will be seen on the database
 
 
+on the menu bar create a link register, inside the register create a form with the following input
+Name: First name , Last name
+Email, Phone number,
+How did you get to know about us 
+do a dropdown it should have , facebook, website, instagram, twitter, others specify
+Are you a existing customer use radio button(yes or no) 
+address,country,Register
+*/ 
+
+<div>
+    <form action="">
+    <label for="name">Name:</label>
+    <input type="text"><br>
+    <label for="email">Email</label>
+    <input type="email"><br>
+    <label for="phone">Phone:</label>
+    <input type="number" name="" id=""><br>
+    <label for="dropdown">How did you come to know us:</label>
+    <input type="button" value="" ><br>
+    <label for="">Are you a existing customer</label>
+    <label for="">Yes</label><br>
+    <input type="radio" name="" id="">
 
 
-                         if(isset($_POST['submit'])){
 
-                         if(empty($password)){
-                             $password_error = "Enter your password";
-                         }
-
-            
-                         elseif (!preg_match( "/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,20}$/", $password))
-                         {
-                            $only_password = "password is not strong enough ";
-                         }
-                         
-
-                         /*elseif (empty($re_enter_password)){
-                            $re_enter_error = "Enter your password";
-                         }*/
-
-           
-                        elseif ( $re_enter_password != $password)
-                        {
-                           $only_re_enter = "password is not the same ";
-                        }
-
-                        else
-                        {
-                           echo "password is the same ";
-                        }
-
-                        
-
-                       
-
-                        }
-                        
-                                
-                         if(empty($gender)){
-                             $gender_error = "Enter your gender";
-                         }
-
-                         if($name_error == "" && $gender_error == "" && $re_enter_error =="" && $password_error == "")
-                         {
-                            echo "<span style='color:green'; font-weight:bold;>Successfully Registered </span>";
-                         }
-                          }         
-                                      
-                        ?>
-               
-               
-    </div>
-
-    <div>
-        <?php
-            if(isset($_POST['upload']))
-        {
-            $file = $_FILES['profile_picture'];
-            $file_name = $_FILES['profile_picture']['name'];
-            $file_tmp_name =$_FILES['profile_picture']['tmp_name'];
-            $file_size = $_FILES['profile_picture']['size'];
-            $file_error = $_FILES['profile_picture']['error'];
-            $file_type = $_FILES['profile_picture']['type'];
-
-            $exploded_file = explode('.', $file_name);
-            $file_ext = strtolower(end($exploded_file));
-            $allowed_ext = array('jpg', 'jpeg', 'png', 'gif', 'docx', 'pdf');
-
-            if(in_array($file_ext, $allowed_ext)){
-
-                if($file_error == 0){
-                if($file_size < 1048576){
-                    $file_name_new = uniqid('', true) . "." . $file_ext;
-                    $file_destination = 'images/'. $file_name_new;
-                    if(move_uploaded_file($file_tmp_name, $file_destination))
-                    {
-                        echo"<p style='color:green;'>Succesfully Uploaded</p>";
-                    }else{
-                        echo"<p style='color:red;'Fail to upload </p>";
-                    }
-                }else{
-                    echo"<p style='color:red;'>You are not allowed to upload a file that is more than 1MB </p>";
-                }
-            }else
-            {
-                echo "<p style='color:red;'>Error Encountered</p>";
-            }
-            }else{
-                echo"<p style='color:red;'>You cannot upload a file of this type </p>";
-            }
-
-        }
-        
-        ?>
-    </div>
-
-    <div>
-        <div class="registration">
-            <form action="" method="POST" enctype="multipart/form-data">
-            <label for="name"></label>
-            <input type="text" id="name" name="name" placeholder=" Your Name" 
-            value="<?php if(isset($_POST['name'])) {echo $name;} ?>"><span style='color:red; font-weight: bold;'>*</span>
-            <?php echo  "<span style='color:red; font-weight:bold;'>$name_error</span>"  ;?>
-             <?php echo  "<span style='color:red; font-weight:bold;'>$only_letters</span>"  ;?><br><br>
-
-            <div class="form_gender">
-            <br>
-            <label for="gender"><span style='color:red; font-weight: bold;'>*</span>Gender: </label><span> &nbsp&nbsp&nbsp&nbsp&nbsp </span>
-            <label for="gender">Male</label>
-            <input  type="radio" id="gender" name="gender" value="Male" 
-            <?php if(isset($_POST['gender']) && $gender == "Male") {echo  "checked";}?>> 
-            <label for="gender">Female</label>
-            <input type="radio" id="gender" name="gender" value="Female"
-            <?php if(isset($_POST['gender']) && $gender == "Female") {echo  "checked";}?>>
-            <?php echo  "<span style='color:red; font-weight:bold;'>$gender_error</span>"  ;?>
-
-        <br>
-
+    </form>
+</div>
     
-     </div>
-             
-             <label for="password">Password</label>
-            <input type="" id="password" name="abcDeF1#" placeholder=" Your password"
-            value="<?php if(isset($_POST['password'])) {echo $password;} ?>"><span style='color:red; font-weight: bold;'>*</span>
-            <?php echo  "<span style='color:red; font-weight:bold;'>$password_error</span>"  ;?>
-            <?php echo  "<span style='color:red; font-weight:bold;'>$only_password</span>"  ;?>
-
-            <label for="Re-enter"> Re-enter</label>
-            <input type="" id="Re-enter" name="re_enter" placeholder="Re-enter your password"
-            value="<?php if(isset($_POST['re_enter_password'])) {echo $re_enter_password;} ?>"><span style='color:red; font-weight: bold;'>*</span>
-            <?php echo  "<span style='color:red; font-weight:bold;'>$re_enter_error</span>"  ;?>
-            <?php echo  "<span style='color:red; font-weight:bold;'>$only_re_enter</span>"  ;?><br><br>
-
-           
-
-            <h1>UPLOAD YOUR PROFILE PICTURE</h1>
-            <P>file type allowed: "*.jpg, *.jpeg, *.pdf,  *.docx"</P>
-            <input type="file" name="profile_picture" class="picture_control"><br><br>
-            <button type="submit" class="picture_button" name="upload" > Upload</button><br><br>
-
-            <button type="submit" name="submit" id="form_button" > Register</button>
-            </form>
-        </div>
-    </div>
 
     
     <!-- Footer Start -->
@@ -241,6 +104,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>
