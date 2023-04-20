@@ -19,14 +19,7 @@
                     </a>
                     <div class="navbar-nav mr-auto py-0">
                         <a href="service.php" class="nav-item nav-link">Service</a>
-                        <span class="account_menu_container">
-                            <span>
-                                <li><a href="account.php" class="nav-item nav-link">Account</i></a></li>
-                            </span>
-                            <?php require "includes/account_menu.php"; ?>
-                        </span>
-                        
-                        <a href="welcome.php" class="nav-item nav-link">Welcome</a>
+                        <a href="order.php" class="nav-item nav-link">Orders</a>
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
