@@ -210,21 +210,25 @@ if(isset($_POST['display'])){
     <title>Document</title>
 </head>
 <body>
-    <h3> Click below to see all Customer and details </h3></h3>
-    <form action="" method="POST">
-        <button type="submit" name="display_all">Show result</button>
-    </form>
 
-    <h3>Click below to see Customer name and phone number  </h3></h3>
+<div class="form_style">
+<h3> Click below to see all Customer and details </h3>
     <form action="" method="POST">
-        <button type="submit" name="display_name">Show result</button>
-    </form>
+        <button type="submit" class="show_result" name="display_all">Show result</button>
+    </form><br>
+
+    <h3>Click below to see Customer name and phone number  </h3>
+    <form action="" method="POST">
+        <button type="submit" class="show_result" name="display_name">Show result</button>
+    </form><br>
 
     <h3> Enter a particular email to search for the client order</h3>
     <form action="" method="POST">
-        <input type="email" name="email" id="" placeholder="Enter your email">
-            <button type="submit" name="display">Submit</button>
-    </form>
+        <input type="email" name="email" id="" placeholder="Enter your email"><br><br>
+            <button type="submit" class="show_result" name="display">Submit</button>
+    </form><br>
+</div>
+    
 </body>
 </html>
 

@@ -55,7 +55,7 @@
     
     <form method="POST">
    <br>
-    <h1>Order Request</h1>
+    <h1 class="order_request">Order Request</h1>
     <?php
                          $name_error = $lastname_error = $email_error = $gender_error = $message_error = $subject_error= $phone_error =
                          $only_letters = $only_lastname =   $only_email=   $only_numbers="";
@@ -171,13 +171,13 @@
     </div>
 
             <label for="email"></label>
-            <input type="" id="email" name="email" placeholder=" Your email"
+            <input type="" class="order_input"  id="email" name="email" placeholder=" Your email"
             value="<?php if(isset($_POST['email'])) {echo $email;} ?>"><span style='color:red; font-weight: bold;'>*</span>
             <?php echo  "<span style='color:red; font-weight:bold;'>$email_error</span>"  ;?>
             <?php echo  "<span style='color:red; font-weight:bold;'>$only_email</span>"  ;?>
     
             <label for="phone"></label>
-            <input type="" id="phone" name="phone" placeholder=" Phone number" 
+            <input type="" class="order_input" id="phone" name="phone" placeholder=" Phone number" 
             value="<?php if(isset($_POST['phone'])) {echo $phone;} ?>"><span style='color:red; font-weight: bold;'>*</span>
             <?php echo  "<span style='color:red; font-weight:bold;'>$phone_error</span>"  ;?>
              <?php echo  "<span style='color:red; font-weight:bold;'>$only_numbers</span>"  ;?><br>
@@ -210,7 +210,7 @@
      </div>
     
     <label for="message"></label><br>
-    <textarea name="message" id="message" cols="85" rows="5" placeholder="order other products not on list"></textarea>
+    <textarea name="message" id="message" cols="83" rows="5" placeholder="order other products not on list"></textarea>
     <br><br>
     
 

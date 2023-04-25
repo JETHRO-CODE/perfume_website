@@ -198,7 +198,7 @@
     <br>
 
     <label for="message"></label><br>
-    <textarea name="message" id="message" cols="85" rows="5" placeholder="Message"></textarea>
+    <textarea name="message" id="message" cols="88" rows="5" placeholder="Message"></textarea>
     <br><br>
 
     <button type="submit" name="submit"id="form_button" >Send Message</button>
