@@ -48,7 +48,15 @@
 
    
 
-<?php
+
+
+<div>
+    <div class="form_style">
+    
+    <form method="POST">
+   <br>
+    <h1>Order Request</h1>
+    <?php
                          $name_error = $lastname_error = $email_error = $gender_error = $message_error = $subject_error= $phone_error =
                          $only_letters = $only_lastname =   $only_email=   $only_numbers="";
                          if(isset($_POST['submit'])){
@@ -131,7 +139,7 @@
                              }
                              else
                              {
-                                 echo "<p style='color:red; font-weight:bold;' >Registration failed </p>";
+                                 echo "<p style='color:red; font-weight:bold;' >Order failed </p>";
 
                              }
                          }
@@ -141,13 +149,6 @@
                           }         
                                       
                         ?>
-
-<div>
-    <div class="form_style">
-    
-    <form method="POST">
-   <br>
-    <h1>Order Request</h1>
     <div>
         
         <div class="form_input1">

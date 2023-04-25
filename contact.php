@@ -110,10 +110,18 @@
                          if(empty($gender)){
                              $gender_error = "Enter your gender";
                          }
+                         else{
 
-                         else
-                         {
-                             $sql = "INSERT INTO contact_table(name, email, gender, subject, message) VALUES('$name', '$email', '$gender', '$website', '$message')";
+                            $sql="SELECT email FROM contact_table WHERE email='$email'";
+                            $result= mysqli_query($conn,$sql);
+
+                            if(mysqli_num_rows($result)>0)
+                            {
+                            echo "<p style='color:red; font-weight:bold;' >You are already Registered </p>";
+                            }
+                            else{
+                     
+                            $sql = "INSERT INTO contact_table(name, email, gender, subject, message) VALUES('$name', '$email', '$gender', '$website', '$message')";
  
                              if(mysqli_query($conn, $sql))
                              {
@@ -124,6 +132,9 @@
                                  echo "<p style='color:red; font-weight:bold;' >Registration failed </p>";
                              }
                          }
+                         }
+
+                         
 
                                                 
         
