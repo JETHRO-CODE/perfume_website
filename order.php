@@ -130,7 +130,24 @@
                          }
 
                          else
+                         
                          {
+                            $sql="SELECT email FROM order_table WHERE email='$email'";
+                            $result= mysqli_query($conn,$sql);
+                
+                            if(mysqli_num_rows($result)>0)
+                            {
+                              //echo "<p style='color:red; font-weight:bold;' >You are already Registered </p>";
+                              $sql =" UPDATE order_table SET name = '$name', lastname='$lastname', email='$email', phone='$phone', products='$products',  Existing_Customer='$gender', 
+                              Other_products_order='$message' where email='$email'";
+                
+                              if(mysqli_query($conn,$sql)){
+                                echo "<p style='color:green; font-weight:bold;' >Successfully Updated </p>";
+                              }else{
+                                echo "<p style='color:red; font-weight:bold;' >Update failed </p>";
+                              }
+                            }
+                            else{
                              $sql = "INSERT INTO order_table(name, lastname, email, phone, products, Existing_Customer, Other_products_order) VALUES('$name', '$lastname', '$email', '$phone', '$products', '$gender', '$message')";
  
                              if(mysqli_query($conn, $sql))
@@ -142,6 +159,7 @@
                                  echo "<p style='color:red; font-weight:bold;' >Order failed </p>";
 
                              }
+                            }
                          }
 
                                                 

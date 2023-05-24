@@ -35,7 +35,7 @@
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px;">
         <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">Registration</h1>
+            <h1 class="text-white display-3 mt-lg-5">Orders</h1>
             <div class="d-inline-flex align-items-center text-white">
                 <p class="m-0"><a class="text-white" href="">Home</a></p>
                 <i class="fa fa-circle px-3"></i>
@@ -45,7 +45,23 @@
     </div>
     <!-- Header End -->
 
-<?php
+
+
+
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="form_style2">
+    <br>
+    <?php
 if(isset($_POST['display'])){
     $email = htmlspecialchars(trim($_POST['email']));
         require"includes/order_db_conn.php";
@@ -97,7 +113,7 @@ if(isset($_POST['display'])){
 
     if(isset($_POST['display_all'])){
             require"includes/order_db_conn.php";
-            $sql = "SELECT  * FROM order_table";
+            $sql = "SELECT  * FROM order_table ORDER BY name";
 
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result)> 0)
@@ -197,36 +213,44 @@ if(isset($_POST['display'])){
                                 echo"</table>";
                             }
                 }
-?>
+                
 
 
-    
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-<div class="form_style">
-<h3> Click below to see all Customer and details </h3>
+                if(isset($_POST['delete'])){
+                    require "includes/order_db_conn.php";
+                    $email = htmlspecialchars(trim($_POST['email']));
+                    $sql = "DELETE FROM order_table WHERE email='$email'";
+                    
+                    if(mysqli_query($conn, $sql))
+                    {
+                        echo"<span style = 'color:green; font-weight: bold;'>Successfully Deleted</span>";
+                    }else{
+                        echo"<span style = 'color:red; font-weight: bold;'>Failed</span>";
+                    }
+                }
+                
+?><br>
+<h4> Click below to see all Customer and details </h4>
     <form action="" method="POST">
         <button type="submit" class="show_result" name="display_all">Show result</button>
     </form><br>
 
-    <h3>Click below to see Customer name and phone number  </h3>
+    <h4>Click below to see Customer name and phone number  </h4>
     <form action="" method="POST">
         <button type="submit" class="show_result" name="display_name">Show result</button>
     </form><br>
 
-    <h3> Enter a particular email to search for the client order</h3>
+    <h4> Enter a particular email to search for the client order</h4>
     <form action="" method="POST">
-        <input type="email" name="email" id="" placeholder="Enter your email"><br><br>
+        <input class="client_view" type="email" name="email" id="" placeholder="Enter your email">
             <button type="submit" class="show_result" name="display">Submit</button>
     </form><br>
+
+    <h4>Enter a particular email to  delete an order</h4>
+    <form  action="" method="POST">
+        <input class="client_view" type="email" name="email" id="" placeholder="Enter your email">
+             <button type="submit" name="delete" class="show_result" >Delete</button>
+    </form>
 </div>
     
 </body>
