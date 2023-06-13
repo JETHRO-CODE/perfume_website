@@ -1,3 +1,5 @@
+<?php  require "functions/functions.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +29,9 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Customized Font Awesome -->
+    <script src="https://kit.fontawesome.com/d79d358dc6.js" crossorigin="anonymous"></script>
+
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -45,7 +50,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <a href="index.php" class="navbar-brand mx-4 mb-3">
                 <div class="logo_container">
                      <img src="img/logo.png" alt="">
                  </div>
@@ -61,31 +66,31 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Home</a>
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Profile</a>
+                    <a href="index.php?file=home.php&title=home" class="nav-item nav-link active"><i class="fa-solid fa-house"></i>Home</a>
+                    <a href="index.php?file=profile.php&title=profile" class="nav-item nav-link"><i class="fa-solid fa-id-card"></i>Profile</a>
                     
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Users</a>
+                    <a href="index.php?file=users.php&title=users" class="nav-item nav-link"><i class="fa-solid fa-user"></i>Users</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Posts</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-signs-post"></i>Posts</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Add new Posts</a>
-                            <a href="signup.html" class="dropdown-item">View Posts</a>
+                            <a href="index.php?file=add_post.php&title=Post" class="dropdown-item"><i class="fa-solid fa-right-long"></i>Add new Posts</a>
+                            <a href="index.php?file=view_post.php&title=view-post" class="dropdown-item"><i class="fa-solid fa-right-long"></i>View Posts</a>
                             
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Products</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-brands fa-product-hunt"></i>Products</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Add new Products</a>
-                            <a href="signup.html" class="dropdown-item">View Products</a>
+                            <a href="index.php?file=add_product.php&title=Product" class="dropdown-item"><i class="fa-solid fa-right-long"></i>Add new Products</a>
+                            <a href="index.php?file=view_product.php&title=View-product" class="dropdown-item"><i class="fa-solid fa-right-long"></i>View Products</a>
                             
                         </div>
                     </div>
                     
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Notification</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Comments</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Tutorials</a>
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Logout</a>
+                    <a href="index.php?file=notification.php&title=Notifications" class="nav-item nav-link"><i class="fa-solid fa-envelope"></i>Notification</a>
+                    <a href="index.php?file=comments.php&title=Comments" class="nav-item nav-link"><i class="fa-solid fa-comment"></i>Comments</a>
+                    <a href="index.php?file=tutorials.php&title=Tutorials" class="nav-item nav-link"><i class="fa-sharp fa-solid fa-landmark"></i>Tutorials</a>
+                    <a href="index.php?file=logout.php&title=Logout" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-sign-out-alt"></i>Logout</a>
                     
                 </div>
             </nav>
@@ -185,9 +190,21 @@
             </nav>
             <!-- Navbar End -->
 
-
+            
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
+
+                <div class="main_body">
+                <div class="title_container">
+                    <h2> <?php echo get_title();?>
+                </h2>
+                </div>
+                <div class="main_content">
+                <?php echo get_files(); ?>
+                </div>
+
+
+                </div>
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
